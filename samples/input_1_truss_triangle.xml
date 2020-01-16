@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<structure>
+	<materials>
+		<material id="steel" E="210000000000" />
+	</materials>
+	<frame_sections>
+		<O diameter="0.02 0.01" />
+	</frame_sections>
+	<loads>
+		<force direction="-y" magnitude="1000000" />
+	</loads>
+	<nodes>
+		<node id="hinge" coords="0 0 0" />
+		<node id="roller" coords="1 0 0" />
+		<node id="free" coords="0.5 1 0" loads="1" />
+	</nodes>
+	<elements>
+		<bar nodes="hinge free" material="steel" section="1" />
+		<bar nodes="roller free" material="steel" section="1" />
+		<bar nodes="hinge roller" material="steel" section="1" />
+	</elements>
+	<restraints>
+		<restraint nodes="hinge" disp_x="0" disp_y="-0.001" />
+		<restraint nodes="roller" local_coordinate_system="5 -1" disp_y="0" />
+	</restraints>
+	
+	<output-options>
+		Θα προκύπτουν όσο προχωράει το πρόγραμμα
+	</output-options>
+</structure>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<structure>
+	<materials>
+		<material E="210000000000" />
+	</materials>
+	<frame_sections>
+		<generic A="0.01" />
+	</frame_sections>
+	<loads>
+		<force direction="-y" />
+	</loads>
+	<nodes>
+		<node id="fix_left" coords="-1 0" />
+		<node id="fix_right" coords="1 0" />
+		<node id="free" coords="0 0" loads="1" />
+	</nodes>
+	<elements>
+		<bar nodes="fix_left free" material="1" section="1" />
+		<bar nodes="fix_right free" material="1" section="1" />
+	</elements>
+	<restraints>
+		<restraint nodes="fix_left fix_right" disp_x="0" disp_y="0" />
+	</restraints>
+</structure>

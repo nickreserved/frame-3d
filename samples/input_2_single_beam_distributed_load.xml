@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<structure>
+	<materials>
+		<material id="steel" E="210000000000" v="0.3" />
+	</materials>
+	<frame_sections>
+		<generic A="0.01" Iy="0.000008333" Iz="0.00000277777" It="0.0000009259259" Cs="0.00000009259259" It_S="0.00000018518518" />
+	</frame_sections>
+	<loads>
+		<force direction="+y" magnitude="1000 2000" />
+	</loads>
+	<nodes>
+		<node id="A" coords="0 0 0" />
+		<node id="B" coords="10 0 0" />
+	</nodes>
+	<elements>
+		<beam nodes="A B" material="steel" section="1" distributed_loads="1" />
+	</elements>
+	<restraints>
+		<restraint nodes="A" disp_x="0" disp_y="0" disp_z="0" rot_x="0" rot_y="0" rot_z="0" />
+	</restraints>
+	
+	<output-options>
+		Θα προκύπτουν όσο προχωράει το πρόγραμμα
+	</output-options>
+</structure>
